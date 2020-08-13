@@ -72,3 +72,9 @@ li {
   background-color: #cfcfcf;
   box-shadow: 0 5px 5px rgba(57, 63, 72, 0.3);
 }
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-self: end;
+}
