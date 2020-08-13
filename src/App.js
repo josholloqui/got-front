@@ -19,10 +19,10 @@ class App extends React.Component {
 
   render() { 
     return (
-      <>
+      <body>
         <Header />
         <List characters={this.state.characters}/>
-      </>
+      </body>
     );
   }
 }
