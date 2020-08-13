@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './Header.js';
 import './App.css';
+import List from './List.js';
+import Footer from './Footer.js'
+import { fetchGOT } from './got-api.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    characters: []
+  }
+
+  componentDidMount = async () => {
+    const gotData = await fetchGOT();
+
+    this.setState({
+      characters: gotData.body
+    })
+  }
+
+  render() { 
+    return (
+      <body>
+        <Header />
+        <List characters={this.state.characters}/>
+        <Footer />
+      </body>
+    );
+  }
 }
-
+ 
 export default App;
