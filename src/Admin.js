@@ -3,12 +3,12 @@ import { addCharacter } from './got-api.js';
 
 class Admin extends React.Component {
     state = {
-        name: '',
-        img_url: '',
+        name: 'Sansa Stark',
+        img_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
         number_of_kids: 0,
         killed_off: false,
-        house: '',
-        description:''
+        house: 'Stark',
+        description:'Enter a description'
     }
 
     handleSubmit = async (e) => {
@@ -21,16 +21,16 @@ class Admin extends React.Component {
             killed_off: this.state.killed_off,
             house: this.state.house,
             description: this.state.description
-        })
+        });
 
         this.setState({
-            name: '',
-            img_url: '',
+            name: 'Sansa Stark',
+            img_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
             number_of_kids: 0,
             killed_off: false,
-            house: '',
-            description:''
-        })
+            house: 'Stark',
+            description:'Enter a description'
+        });
     }
 
     handleNameChange = e => {
