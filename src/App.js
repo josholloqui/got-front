@@ -8,12 +8,14 @@ import {
 import Header from './Header.js';
 import List from './List/List.js';
 import Admin from './Admin.js';
+import Footer from './Footer.js';
+import './App.css';
 
 class App extends React.Component {
   render() { 
     return (
       <>
-      <div>
+      <body>
             <Router>
                 <header>
                   <Header />
@@ -34,8 +36,9 @@ class App extends React.Component {
                         render={(routerProps) => <Admin {...routerProps} />} 
                     />
                 </Switch>
+                <Footer />
             </Router>
-        </div>
+        </body>
         </>
     )
 }

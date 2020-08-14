@@ -4,7 +4,7 @@ import { addCharacter } from './got-api.js';
 class Admin extends React.Component {
     state = {
         name: 'Sansa Stark',
-        img_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
+        image_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
         number_of_kids: 0,
         killed_off: false,
         house: 'Stark',
@@ -16,7 +16,7 @@ class Admin extends React.Component {
 
         await addCharacter({
             name: this.state.name,
-            img_url: this.state.img_url,
+            image_url: this.state.image_url,
             number_of_kids: this.state.number_of_kids,
             killed_off: this.state.killed_off,
             house: this.state.house,
@@ -25,7 +25,7 @@ class Admin extends React.Component {
 
         this.setState({
             name: 'Sansa Stark',
-            img_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
+            image_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
             number_of_kids: 0,
             killed_off: false,
             house: 'Stark',
@@ -37,12 +37,12 @@ class Admin extends React.Component {
         this.setState({ name: e.target.value });
     }
 
-    handleImgChange = e => {
-        this.setState({ img_url: e.target.value });
+    handleImageChange = e => {
+        this.setState({ image_url: e.target.value });
     }
 
     handleKidsChange = e => {
-        this.setState({ number_of_kids: e.target.value });
+        this.setState({ number_of_kids: Number(e.target.value) });
     }
 
     handleKilledChange = e => {
@@ -68,7 +68,7 @@ class Admin extends React.Component {
                     </label>
                     <label>
                         Image URL:
-                        <input onChange={this.handleImgChange} value={this.state.img_url} required />
+                        <input onChange={this.handleImgChange} value={this.state.image_url} required />
                     </label>
                     <label>
                         House:
