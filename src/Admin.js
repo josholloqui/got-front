@@ -42,11 +42,11 @@ class Admin extends React.Component {
     }
 
     handleKidsChange = e => {
-        this.setState({ number_of_kids: e.target.value});
+        this.setState({ number_of_kids: e.target.value });
     }
 
     handleKilledChange = e => {
-        this.setState({ killed_off: e.target.value});
+        this.setState({ killed_off: true });
     }
 
     handleHouseChange = e => {

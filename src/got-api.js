@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const URL = process.env.REACT_APP_API || 'https://got-data.herokuapp.com';
+const URL = process.env.REACT_APP_API_URL;
 
 export function fetchGOT() {
     return request.get(`${URL}/got`);
