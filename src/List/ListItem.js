@@ -1,6 +1,6 @@
 import React from 'react';
 
-class List extends React.Component {
+class ListItem extends React.Component {
     render() { 
         return (
             <main>
@@ -23,4 +23,4 @@ class List extends React.Component {
     }
 }
  
-export default List;
+export default ListItem;
