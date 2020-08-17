@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchCharacter } from './got-api.js';
+import { fetchCharacter } from '../got-api.js';
 
 class Details extends React.Component {
     state = {
