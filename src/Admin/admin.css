@@ -1,0 +1,10 @@
+form {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 20px;
+    text-align: start;
+}
+
+input {
+    width: auto;
+}

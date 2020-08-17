@@ -1,14 +1,15 @@
 import React from 'react';
-import { addCharacter } from './got-api.js';
+import { addCharacter } from '../got-api.js';
+import './admin.css';
 
 class Admin extends React.Component {
     state = {
-        name: 'Sansa Stark',
-        image_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
+        name: '',
+        image_url: '',
         number_of_kids: 0,
         killed_off: false,
-        house: 'Stark',
-        description:'Enter a description'
+        house: '',
+        description:''
     }
 
     handleSubmit = async (e) => {
@@ -24,12 +25,12 @@ class Admin extends React.Component {
         });
 
         this.setState({
-            name: 'Sansa Stark',
-            image_url: 'https://vignette.wikia.nocookie.net/gameofthrones/images/6/63/QueenSansa.PNG/revision/latest?cb=20190520085809',
+            name: '',
+            image_url: '',
             number_of_kids: 0,
             killed_off: false,
-            house: 'Stark',
-            description:'Enter a description'
+            house: '',
+            description:''
         });
     }
 
@@ -64,11 +65,11 @@ class Admin extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name:
-                        <input onChange={this.handleNameChange} value={this.state.name} required />
+                        <input onChange={this.handleNameChange} value={this.state.name} placeholder='Enter Character Name...' required />
                     </label>
                     <label>
                         Image URL:
-                        <input onChange={this.handleImgChange} value={this.state.image_url} required />
+                        <input onChange={this.handleImgChange} value={this.state.image_url} placeholder='Enter Image URL...' required />
                     </label>
                     <label>
                         House:
@@ -87,15 +88,15 @@ class Admin extends React.Component {
                     </label>
                     <label>
                         Number of Kids:
-                        <input onChange={this.handleKidsChange} type='number' value={this.state.number_of_kids} required />
+                        <input onChange={this.handleKidsChange} type='number' value={this.state.number_of_kids} placeholder='Enter Number of Kids...' required />
                     </label>
                     <label>
-                        Was the Character Killed Off? Check the box if true
+                        Was the Character Killed Off?
                         <input type='checkbox' onChange={this.handleKilledChange} name='killed' value='true' />
                     </label>
                     <label>
                         Description:
-                        <input onChange={this.handleDescriptionChange} value={this.state.description} required />
+                        <input onChange={this.handleDescriptionChange} value={this.state.description} placeholder='Enter Description...' required />
                     </label>
                     <button>Add Character</button>
                 </form>

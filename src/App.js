@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Header from './HeaderFooter/Header.js';
 import List from './List/List.js';
-import Admin from './Admin.js';
+import Admin from './Admin/Admin.js';
 import Footer from './HeaderFooter/Footer.js';
 import Details from './DetailsPage/Details.js';
 import './App.css';
