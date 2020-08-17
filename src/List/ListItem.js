@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ListItem extends React.Component {
     render() { 
@@ -8,13 +9,12 @@ class ListItem extends React.Component {
                 <ul>
                     {
                         this.props.characters.map((character) => {
-                            return <li>
-                                <h3>{character.name}</h3>
-                                <img alt={character.image_url} src={character.image_url} />
-                                <p>House {character.house}</p>
-                                <p>Number of Kids: {character.number_of_kids} - Killed Off: {character.killed_off ? 'Yes' : 'No'}</p>
-                                <p>{character.description}</p>
-                            </li>
+                            return <Link to={`/details/${character.id}`}>
+                                <li>
+                                    <img alt={character.image_url} src={character.image_url} />
+                                    <h3>{character.name}</h3>
+                                </li>
+                            </Link>
                         })
                     }
                 </ul>

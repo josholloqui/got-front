@@ -9,6 +9,7 @@ import Header from './Header.js';
 import List from './List/List.js';
 import Admin from './Admin.js';
 import Footer from './Footer.js';
+import Details from './Details.js';
 import './App.css';
 
 class App extends React.Component {
@@ -34,6 +35,11 @@ class App extends React.Component {
                         path="/admin" 
                         exact
                         render={(routerProps) => <Admin {...routerProps} />} 
+                    />
+                    <Route 
+                        path="/details/:id" 
+                        exact
+                        render={(routerProps) => <Details {...routerProps} />} 
                     />
                 </Switch>
                 <Footer />
