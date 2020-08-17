@@ -57,6 +57,7 @@ img {
   height: auto;
   max-width: 350px;
   filter: drop-shadow(5px 5px 3px);
+  justify-self: center;
 }
 
 ul {
