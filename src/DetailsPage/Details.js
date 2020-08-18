@@ -105,7 +105,7 @@ class Details extends React.Component {
                     </label>
                     <label>
                         Image URL:
-                        <input onChange={this.handleImgChange} value={this.state.image_url} placeholder='Enter Image URL...' required />
+                        <input onChange={this.handleImageChange} value={this.state.image_url} placeholder='Enter Image URL...' required />
                     </label>
                     <label>
                         House:
