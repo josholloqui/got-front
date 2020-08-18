@@ -78,7 +78,7 @@ class Admin extends React.Component {
                     </label>
                     <label>
                         Image URL:
-                        <input onChange={this.handleImgChange} value={this.state.image_url} placeholder='Enter Image URL...' required />
+                        <input onChange={this.handleImageChange} value={this.state.image_url} placeholder='Enter Image URL...' required />
                     </label>
                     <label>
                         House:
@@ -95,6 +95,7 @@ class Admin extends React.Component {
                     <label>
                         Was the Character Killed Off?
                         <input type='checkbox' onChange={this.handleKilledChange} name='killed' value='true' />
+                        <span>Yes</span>
                     </label>
                     <label>
                         Description:
