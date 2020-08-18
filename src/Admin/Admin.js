@@ -1,5 +1,5 @@
 import React from 'react';
-import { addCharacter } from '../got-api.js';
+import { addCharacter, fetchHouses } from '../got-api.js';
 import './admin.css';
 
 class Admin extends React.Component {
@@ -8,8 +8,17 @@ class Admin extends React.Component {
         image_url: '',
         number_of_kids: 0,
         killed_off: false,
-        house: '',
-        description:''
+        description: '',
+        house_id: 1,
+        houses: []
+    }
+
+    componentDidMount = async () => {
+        const houseData = await fetchHouses();
+
+        this.setState({
+            houses: houseData.body
+        });
     }
 
     handleSubmit = async (e) => {
@@ -20,8 +29,8 @@ class Admin extends React.Component {
             image_url: this.state.image_url,
             number_of_kids: this.state.number_of_kids,
             killed_off: this.state.killed_off,
-            house: this.state.house,
-            description: this.state.description
+            description: this.state.description,
+            house_id: this.state.house_id
         });
 
         this.setState({
@@ -29,8 +38,8 @@ class Admin extends React.Component {
             image_url: '',
             number_of_kids: 0,
             killed_off: false,
-            house: '',
-            description:''
+            description:'',
+            house_id: 1
         });
     }
 
@@ -51,7 +60,7 @@ class Admin extends React.Component {
     }
 
     handleHouseChange = e => {
-        this.setState({ house: e.target.value });
+        this.setState({ house_id: e.target.value });
     }
 
     handleDescriptionChange = e => {
@@ -74,16 +83,9 @@ class Admin extends React.Component {
                     <label>
                         House:
                         <select onChange={this.handleHouseChange} >
-                            <option value='Arryn'>Arryn</option>
-                            <option value='Baratheon'>Baratheon</option>
-                            <option value='Bronn'>Bronn</option>
-                            <option value='Greyjoy'>Greyjoy</option>
-                            <option value='Lannister'>Lannister</option>
-                            <option value='Martell'>Martell</option>
-                            <option value='Stark'>Stark</option>
-                            <option value='Targaryen'>Targaryen</option>
-                            <option value='Tully'>Tully</option>
-                            <option value='Tyrell'>Tyrell</option>
+                            {
+                                this.state.houses.map((house) => <option value={house.id}>{house.house}</option>)
+                            }
                         </select>
                     </label>
                     <label>
